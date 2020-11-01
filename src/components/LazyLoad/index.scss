@@ -30,6 +30,7 @@
       animation-name: unblur-highres;
       animation-duration: 1s;
       opacity: 1;
+      transition: 1s opacity ease;
     }
     @keyframes unblur-highres {
       from { filter: blur(1vw); }
@@ -43,6 +44,7 @@
       opacity: 1;
       animation-name: unblur-lowres;
       animation-duration: 1s;
+      transition: 1s opacity ease;
     }
     @keyframes unblur-lowres {
       from { filter: blur(2vw); }
