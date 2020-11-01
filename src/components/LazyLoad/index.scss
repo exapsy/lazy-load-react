@@ -1,0 +1,48 @@
+.images {
+  width: 500px;
+}
+
+.wrapper {
+  position: relative;
+  overflow: hidden;
+  >img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    object-fit: cover;
+    object-position: center;
+  }
+  .high-res {
+    opacity: 0;
+    &--loaded {
+      animation-name: unblur-highres;
+      animation-duration: 1s;
+      opacity: 1;
+    }
+    @keyframes unblur-highres {
+      from { filter: blur(1vw); }
+      to { filter: blur(0); }
+    }
+  }
+  .low-res {
+    opacity: 0;
+    filter: blur(1vw);
+    &--loaded {
+      opacity: 1;
+      animation-name: unblur-lowres;
+      animation-duration: 1s;
+    }
+    @keyframes unblur-lowres {
+      from { filter: blur(2vw); }
+      to { filter: blur(1vw); }
+    }
+  }
+}
+.source {
+  opacity: 0;
+  transition: opacity 1s;
+}
