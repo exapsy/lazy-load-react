@@ -2,7 +2,7 @@
 
 ## Functionality
 
-If the image is **not on the screen**, it loads the **placeholder** image, which is supposed to be only 1, so you dont load 100 different placeholder images. As the whole purpose of lazy loading is to make experience smoother.
+If the image is **not on the screen**, it loads the **placeholder** image, which is supposed to be only 1 across many LazyLoaders, so you dont load 100 different placeholder images. As the whole purpose of lazy loading is to make experience smoother.
 
 When the image **is on screen**, it loads the low resolution image and the high resolution image. Whichever is loaded first, will show up on screen.
 
