@@ -19,23 +19,6 @@ interface LazyLoadProps extends React.HTMLAttributes<HTMLImageElement> {
   aspectRatio?: number
 }
 
-const useImageLoaded = (img: HTMLImageElement | null): boolean => {
-  const [loaded, setLoaded] = useState(false)
-  useEffect(() => {
-    console.log('Something changed!', img)
-    const handleLoad = () => {
-      console.log('Loaded!')
-      setLoaded(true)
-    }
-
-    img?.addEventListener('load', handleLoad)
-    return () => {
-      img?.removeEventListener('load', handleLoad)
-    }
-  }, [img])
-  return loaded
-}
-
 const useObserved = (selector: string | RefObject<Element>) => {
   const [hasBeenObserved, setHasBeenObserved] = useState(false)
   const [isObserved, setIsObserved] = useState(false)
