@@ -63,6 +63,11 @@ const LazyLoad: React.FC<LazyLoadProps> = (props) => {
   const [highResLoaded, setHighResLoaded] = useState<boolean>(false)
   const [lowResLoaded, setLowResLoaded] = useState<boolean>(false)
 
+  useEffect(() => {
+    setHighResLoaded(false)
+    setLowResLoaded(false)
+  }, [images])
+
 
   const onLoadLowRes = () => {
     setLowResLoaded(true)
